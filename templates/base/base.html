@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<title>{% block title %} Document {% endblock %}</title>
+</head>
+<body>
+
+{% block prueba %}
+
+<h1>Litera</h1>
+<h2>¡¡Boostrap!!</h2>
+<div>
+    <a href="#" class="btn btn-default">Default</a>
+    <a href="#" class="btn btn-primary">Primary</a>
+    <a href="#" class="btn btn-success">Success</a>
+    <a href="#" class="btn btn-info">Info</a>
+    <a href="#" class="btn btn-warning">Warning</a>
+    <a href="#" class="btn btn-danger">Danger</a>
+</div>
+
+{% endblock%}
+
+<br>
+
+{% block content %}
+
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+{% block prueba %}
+
+<table class="table table-bordered">
+	<tr>
+		<th>#</th>
+		<th>Msisdn</th>
+		<th>Fecha Ingreso</th>
+		<th>Razon Ingreso</th>
+		<th>Operadora</th>
+		<th>Acciones</th>
+	</tr>
+	{%if lista_revisar %}
+	{% for lista in lista_revisar %}
+	<tr>
+		<td>{{ lista.id }}</td>
+		<td>{{ lista.msisdn }}</td>
+		<td>{{ lista.fecha_ingreso }}</td>
+		<td>{{ lista.razon_ingreso }}</td>
+		<td>{{ lista.operadora }}</td>
+		<td>
+			<a class="btn btn-primary" href="{% url 'revision:revision_editar' lista.id %}">Editar</a>
+			<a class="btn btn-danger" href="{% url 'revision:revision_eliminar' lista.id %}">Eliminar</a>
+		</td>
+	</tr>
+	{% endfor %}
+	{% else %}
+	<h1>No hay registros</h1>
+	{% endif %}
+
+</table>
+
+{% endblock %}
